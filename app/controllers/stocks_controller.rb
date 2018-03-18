@@ -1,16 +1,13 @@
 class StocksController < ApplicationController
   def search
-    if params[:stock].present?
-      @stock = Stock.new_from_lookup(params[:stock])
-      if @stock
-        render 'users/my_portfolio'
-      else
-        flash[:danger] = "Your query is invalid"
-        redirect_to my_portfolio_path
-      end
+    if params[:stock].blank?
+      flash.now[:danger] = "Your query is empty"
     else
-      flash[:danger] = "Your query is empty"
-      redirect_to my_portfolio_path
+      @stock = Stock.new_from_lookup(params[:stock])
+      flash.now[:danger] = "Your query is invalid either because this symbol doesn't exist or becasue the service is temporarily unavailable" unless @stock
+    end
+    respond_to do |format|
+      format.js { render partial: 'users/result' }
     end
   end
 end
