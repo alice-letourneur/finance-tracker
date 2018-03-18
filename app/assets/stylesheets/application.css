@@ -11,6 +11,14 @@
  * It is generally better to create a new file per style scope.
  *
  *= require devise_bootstrap_views
+ *= require font-awesome
  *= require_tree .
  *= require_self
  */
+
+.results-block {
+  display: inline-block;
+}
+.no-padding {
+  padding: 0!important;
+}
