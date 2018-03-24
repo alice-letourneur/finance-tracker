@@ -16,7 +16,7 @@ gem 'jquery-rails'
 gem "font-awesome-rails"
 gem 'devise-bootstrap-views'
 # Use Stock quote which gives me a real-time, stock data and historical pricing using the Google Finance API.
-gem 'stock_quote'
+gem "stock_quote", '~> 2.0.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
