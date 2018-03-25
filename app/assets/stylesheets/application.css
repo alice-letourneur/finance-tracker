@@ -21,6 +21,7 @@
 }
 .no-padding {
   padding: 0!important;
+  margin-bottom: 15px;
 }
 
 .left-padding {
