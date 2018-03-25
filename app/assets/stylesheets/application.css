@@ -44,3 +44,16 @@
 .nav.navbar-right li .btn-danger:hover {
     background-color: darken(#d9534f, 20%) !important;
 }
+
+.search-results-table td {
+  padding-bottom: 5px;
+}
+
+table a:visited {
+  color: #fff;
+}
+
+table {
+  width: auto!important;
+  min-width: 60%;
+}
