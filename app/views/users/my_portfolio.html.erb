@@ -18,4 +18,9 @@
 <div id="results">
   <%= render 'result' %>
 </div>
-<%= render 'stocks/list' %>
+
+<% if @user.stocks.size > 0 %>
+  <%= render 'stocks/list' %>
+<% else %>
+  <p class="lead">Your portfolio is empty, lookup stocks to add them to your portfolio</p>
+<% end %>

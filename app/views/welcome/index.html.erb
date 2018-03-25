@@ -1,2 +1,13 @@
-<h1>Welcome to the Finance tracker app</h1>
-<%= link_to "My portfolio", my_portfolio_path %>
+<h1>Welcome <%= @user.first_name %></h1>
+
+<% if @user.friends.size > 0 %>
+  <p>You have <%= @user.friends.size %> friends</p>
+  <% else %>
+  <p>You don't follow any friend yet, <%=link_to "follow your friends now and see what stocks they track", my_friends_path %></p>
+
+<% end %>
+<% if @user.stocks.size > 0 %>
+  <p>You track <%= @user.stocks.size %> stocks.</p>
+<% else %>
+  <p>You don't track any stock yet, <%=link_to "start tracking stocks now!", my_portfolio_path %></p>
+<% end %>
