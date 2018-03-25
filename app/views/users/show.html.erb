@@ -1,0 +1,7 @@
+<h2><%= @user.full_name.capitalize %>'s profile</h2>
+<% if @user.stocks.size > 0 %>
+  <%= render 'stocks/list' %>
+<% else %>
+  <p class="lead"><%= @user.first_name %> doesn't track any stock currently!</p>
+<% end %>
+<%= link_to "Back", my_friends_path, class: "btn btn-primary" %>
